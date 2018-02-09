@@ -1,11 +1,12 @@
 /* VENDOR - Default fall-backs and external files.
 ========================================================================== */
-
+@import "~normalize.css";
 
 /* BASE - Base Variable file along with starting point Mixins and Placeholders.
 ========================================================================== */
 @import "variables";
 @import "mixins";
+@import "reset";
 
 /* FRAMEWORK - Structure and layout files.
 ========================================================================== */
