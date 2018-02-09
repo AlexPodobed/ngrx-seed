@@ -5,7 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-proxy": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --prod",
+    "build-stage": "ng build --prod --env=stage",
+    "build-local": "ng build --env=dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -21,12 +24,17 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "@ngrx/effects": "^5.0.1",
+    "@ngrx/router-store": "^5.0.1",
+    "@ngrx/store": "^5.0.0",
+    "@ngrx/store-devtools": "^5.0.1",
     "core-js": "^2.4.1",
+    "ngrx-store-freeze": "^0.2.1",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.3",
+    "@angular/cli": "1.6.8",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
     "@types/jasmine": "~2.5.53",
