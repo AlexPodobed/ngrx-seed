@@ -1,7 +1,10 @@
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { MetaReducer } from '@ngrx/store';
 import { RouterReducerState, routerReducer, RouterStateSerializer } from '@ngrx/router-store';
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
+import { storeFreeze } from 'ngrx-store-freeze';
 
+import { environment } from '../../../../environments/environment';
 import * as fromRouter from './router.reducer';
 import * as fromApp from './app.reducer';
 
@@ -14,6 +17,10 @@ export const reducers: ActionReducerMap<State> = {
   routerReducer: routerReducer,
   app: fromApp.reducer
 };
+
+export const metaReducers: MetaReducer<State>[] = !environment.dev
+  ? [storeFreeze]
+  : [];
 
 export class CustomSerializer implements RouterStateSerializer<fromRouter.RouterStateUrl> {
   serialize(routerState: RouterStateSnapshot): fromRouter.RouterStateUrl {
