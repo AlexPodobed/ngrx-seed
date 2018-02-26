@@ -25,7 +25,8 @@ export class LoginSuccess implements Action {
 export class LoginFail implements Action {
   readonly type = AuthActionTypes.LoginFail;
 
-  constructor(public payload: any){}
+  constructor(public payload: any) {
+  }
 }
 
 export class Logout implements Action {
